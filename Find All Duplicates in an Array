@@ -1,0 +1,19 @@
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+    List<Integer> list =new ArrayList();
+    for(int i=0;i<nums.length;i++)
+    {
+      int position=Math.abs(nums[i])-1;
+      int val=nums[position];
+      if(val>0)
+      {
+        nums[position]=-nums[position];
+      }
+      else
+      {
+        list.add(position+1);
+      }
+    }
+      return list;
+    }
+}
